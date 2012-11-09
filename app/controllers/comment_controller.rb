@@ -1,5 +1,6 @@
 class CommentController < ApplicationController
   def index
+    @titulo = "Comentarios"
     @comments = Comment.find_by_post_id(params[:id])
 
     respond_to do |format|
@@ -8,8 +9,8 @@ class CommentController < ApplicationController
     end
   end
 
-  # GET /comments/new
-  # GET /comments/new.json
+  # GET /comment/new
+  # GET /comment/new.json
   def new
     @comment = Comment.new
 
